@@ -22,9 +22,11 @@ DESCRIPTION
 EXAMPLES
 -----------------------------------------
 
-# chilli_rtmon -debug 
+```sh
+chilli_rtmon -debug
 
-# chilli_rtmon -file /tmp/nexthop.conf -pid <pid> 
+chilli_rtmon -file /tmp/nexthop.conf -pid <pid>
+```
 
 SEE ALSO
 -----------------------------------------
@@ -34,12 +36,12 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. 
 
 AUTHORS
 -----------------------------------------
 
-David Bird  
+David Bird
 
 Copyright (C) 2006-2012 David Bird (Coova Technologies) All rights reserved. 
 

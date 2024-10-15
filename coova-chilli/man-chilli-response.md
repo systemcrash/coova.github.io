@@ -27,7 +27,7 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
 
 AUTHORS
 -----------------------------------------

@@ -22,9 +22,11 @@ DESCRIPTION
 EXAMPLES
 -----------------------------------------
 
+```sh
  *# chilli_radconfig --radiusserver1=192.168.1.1 * \
  --radiussecret=MySecret --adminuser=chillispot  \
  --adminpasswd=chillispot > hs.conf 
+```
 
 SEE ALSO
 -----------------------------------------
@@ -34,12 +36,12 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
 
 AUTHORS
 -----------------------------------------
 
-David Bird  
+David Bird
 
 Copyright (C) 2006-2012 David Bird (Coova Technologies) All rights reserved. 
 

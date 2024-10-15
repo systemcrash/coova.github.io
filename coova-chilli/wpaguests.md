@@ -45,6 +45,7 @@ For information on installing and using JRadius with FreeRADIUS, see:
 
 For this example, the following JRadius handler is defined (abbreviated for readability):
 
+```java
     public class WPACaptivePortal extends PacketHandlerBase 
     {
        public boolean handle(JRadiusRequest request)
@@ -97,9 +98,10 @@ For this example, the following JRadius handler is defined (abbreviated for read
            return false;
        }
     }
+```
 
-This handler is to be ran in the post-auth section of FreeRADIUS, as defined in this JRadius config.xml snippit:
-
+This handler is to be run in the post-auth section of FreeRADIUS, as defined in this JRadius config.xml snippet:
+```xml
     <chain name=post_auth>
        <init-session       name=post_auth-init-session
                            description=Initialize The Radius Session/>
@@ -109,9 +111,11 @@ This handler is to be ran in the post-auth section of FreeRADIUS, as defined in 
        <class-post-auth    name=post_auth-class
                            description=Post-Auth Class Attribute Handler/>
     </chain>
+```
 
 And requires that FreeRADIUS is configured such that Access-Rejects are processed in the post-auth section too (by default, they are not):
 
+```conf
      # in radiusd.conf
      post-auth {
         jradius
@@ -119,6 +123,7 @@ And requires that FreeRADIUS is configured such that Access-Rejects are processe
                 jradius
         }
      }
+```
 
 CoovaAP Example
 ===============
@@ -134,9 +139,10 @@ Some simple tests using Mac OS X as the client (PEAP).
 
 Example User Login
 Just using a FreeRADIUS raddb/users entry to define the user:
-
+```conf
     david   User-Password == testing
             WISPr-Redirection-URL = http://coova.org/
+```
 
 The user experience, at least on Mac OS X, is summarized by:
 Found the SSID and was asked for a username, password, and 802.1x authentication type.
@@ -145,6 +151,7 @@ I had to acknowledge the SSL (TLS) certificate because it is self signed ;)
 I was logged in and able to browse the Internet
 FreeRADIUS/JRadius log (highlights only):
 
+```log
     Access-Request packet from host 192.168.100.200:2084, id=2, length=170
         User-Name = david
         EAP-Message = 0x020200061900
@@ -163,6 +170,7 @@ FreeRADIUS/JRadius log (highlights only):
         MS-MPPE-Recv-Key = 0x239ae8a15596cc224f6990e0713e3524dcac4cc22de68226d2de01fee7b4e77f
         MS-MPPE-Send-Key = 0x938b61d3487a87a6e1a2442767cd6c10036384f6b368d23e553ab53caf13e742
         EAP-Message = 0x03080004
+```
 
 Example Guest Login
 -------------------
@@ -176,6 +184,7 @@ This time, I did the following:
 
 FreeRADIUS/JRadius log (highlights only):
 
+```log
      Access-Request packet from host 192.168.100.200:2084, id=14, length=171
         User-Name = nobody
         EAP-Message = 0x020200061900
@@ -195,3 +204,4 @@ FreeRADIUS/JRadius log (highlights only):
         MS-MPPE-Send-Key = 0xcbc74e30dce41c343b4afe0ea90b7a6413b659bba3a330bcd265da9df4e85ae7
         EAP-Message = 0x03070004
         User-Name = nobody
+```

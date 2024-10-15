@@ -19,14 +19,15 @@ DESCRIPTION
 
 ***chilli_opt*** is a utility to configure a ***chilli*** server. The utility take all the arguments of CoovaChilli, parses the configuration file, and then write out the configuration into a binary form ready for a running chilli server to pick up and use (without delay). 
 
-This utilitiy is executed by ***chilli*** from a forked process to off-line the processing of the configuration, including waiting for any DNS resolution, etc. When ***chilli_opt*** is done processing the configuration, it writes it to a binary format (and system architecture depended) file. When executed by ***chilli*** the binary file used is *config.bin* found in a process specific directory in the temporary file system, such as */tmp/chilli-1000/config.bin* where 1000 is the process id of the running ***chilli*** server. 
+This utility is executed by ***chilli*** from a forked process to off-line the processing of the configuration, including waiting for any DNS resolution, etc. When ***chilli_opt*** is done processing the configuration, it writes it to a binary format (and system architecture depended) file. When executed by ***chilli*** the binary file used is *config.bin* found in a process specific directory in the temporary file system, such as `/tmp/chilli-1000/config.bin` where 1000 is the process id of the running ***chilli*** server. 
 
 EXAMPLES
 -----------------------------------------
+```sh
+chilli_opt --version
 
-# chilli_opt --version 
-
-# chilli_opt -b /tmp/chilli-[pid]/config.bin -r 
+chilli_opt -b /tmp/chilli-[pid]/config.bin -r
+```
 
 SEE ALSO
 -----------------------------------------
@@ -36,12 +37,12 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. 
 
 AUTHORS
 -----------------------------------------
 
-David Bird  
+David Bird
 
 Copyright (C) 2006-2012 David Bird (Coova Technologies) All rights reserved. 
 

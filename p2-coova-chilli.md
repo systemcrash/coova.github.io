@@ -16,7 +16,7 @@ Released under the [GNU General Public License](http://www.gnu.org/licenses/gpl.
 CoovaChilli is a feature rich software access controller that provides a captive
 portal / walled-garden environment and uses RADIUS or a HTTP protocol for access
 provisioning and accounting. CoovaChilli is an integral part of the CoovaAP
-OpenWRT-based firmware which is specialized for hotspots. For more information
+OpenWRT-based firmware which is specialized for hot-spots. For more information
 on how Coova's Chilli differs from the standard ChilliSpot, be sure to see the
 ChangeLog.
 

@@ -87,7 +87,7 @@ UNIX port used for communication with [chilli_query](/CoovaChilli/chilli_query(1
 
 > ***net*** *net* 
 
-Network address of the uplink interface (default = 192.168.182.0/24). The network address is set during initialisation when ***chilli*** establishes a tun device for the uplink interface. The network address is specified as either <address>/<netmask> (192.168.182.0/255.255.255.0) or <address>/<prefix> (192.168.182.0/24). 
+Network address of the uplink interface (default = 192.168.182.0/24). The network address is set during initialization when ***chilli*** establishes a tun device for the uplink interface. The network address is specified as either <address>/<netmask> (192.168.182.0/255.255.255.0) or <address>/<prefix> (192.168.182.0/24). 
 
 > ***dynip*** *net* 
 
@@ -291,11 +291,11 @@ Network access server identifier (default nas01).
 
 > ***radiuslocationid*** *id* 
 
-WISPr Location ID. Should be in the format: isocc=<ISO_Country_Code>, cc=<E.164_Country_Code>, ac=<E.164_Area_Code>, network=<ssid/ZONE>. This parameter is further described in the document: Wi-Fi Alliance - Wireless ISP Roaming - Best Current Practices v1, Feb 2003. 
+WISPr Location ID. Should be in the format: isocc=&lt;ISO_Country_Code&gt;, cc=&lt;E.164_Country_Code&gt;, ac=&lt;E.164_Area_Code&gt;, network=&lt;ssid/ZONE&gt;. This parameter is further described in the document: Wi-Fi Alliance - Wireless ISP Roaming - Best Current Practices v1, Feb 2003. 
 
 > ***radiuslocationname*** *name* 
 
-WISPr Location Name. Should be in the format: <HOTSPOT_OPERATOR_NAME>,<LOCATION>. This parameter is further described in the document: Wi-Fi Alliance - Wireless ISP Roaming - Best Current Practices v1, Feb 2003. 
+WISPr Location Name. Should be in the format: &lt;HOTSPOT_OPERATOR_NAME&gt;,&lt;LOCATION&gt;. This parameter is further described in the document: Wi-Fi Alliance - Wireless ISP Roaming - Best Current Practices v1, Feb 2003. 
 
 > ***radiusnasporttype*** *type* 
 
@@ -363,7 +363,7 @@ Use the TAP interface instead of TUN (Linux only).
 
 > ***noarpentries*** 
 
-Do not create arp table entries in when using TAP. (Linux only). 
+Do not create arp table entries when using TAP. (Linux only). 
 
 > ***nexthop*** *mac-address* 
 
@@ -390,7 +390,7 @@ The TX queue length to set on the TUN/TAP interface.
 MAC address to listen to. If not specified the MAC address of the interface will be used. The MAC address should be chosen so that it does not conflict with other addresses on the LAN. An address in the range 00:00:5E:00:02:00 - 00:00:5E:FF:FF:FF falls within the IANA range of addresses and is not allocated for other purposes. 
 >The ***dhcpmac*** option can be used in conjunction with access filters in the access points, or with access points which supports packet forwarding to a specific MAC address. Thus it is possible at the MAC level to separate access point management traffic from user traffic for improved system security. 
 
-The ***dhcpmac*** option will set the interface in promisc mode. 
+The ***dhcpmac*** option will set the interface in promiscuous mode. 
 
 > ***lease*** *seconds* 
 
@@ -426,7 +426,7 @@ URL of homepage to redirect unauthenticated users to. If not specified this defa
 
 > ***uamaaaurl*** *url* 
 
-When chilli is built with the *--enable-chilliproxy* compile-time option, this configuration option can be used to define a URL to use for the HTTP AAA protocol described here: http://www.coova.org/CoovaChilli/Proxy 
+When chilli is built with the *--enable-chilliproxy* compile-time option, this configuration option can be used to define a URL to use for the HTTP AAA protocol described [here](https://coova.github.io/CoovaChilli/chilli_proxy(1).html )
 
 > ***wisprlogin*** *url* 
 
@@ -470,7 +470,7 @@ One domain prefix per use of the option; defines a list of domain names to autom
 
 > ***uamregex*** *host-pattern::path-pattern::qs-pattern* 
 
-When chilli is built with the ***--enable-chilliredir*** option given to the configure script, the ***uamregex*** option is available. The value should be a ***::*** separated list of three values; the regex patterns to match the Host header, the URL path, and the query string of the request. The patterns follow the ***regex(7)***syntax with the addition of ******* ** meaning anything (or to not check that field) and any pattern starting with ***!*** ** will be negated in meaning. 
+When chilli is built with the ***--enable-chilliredir*** option given to the configure script, the ***uamregex*** option is available. The value should be a ***::*** separated list of three values; the regex patterns to match the Host header, the URL path, and the query string of the request. The patterns follow the ***regex(7)***syntax with the addition of ******* ** meaning anything (or not to check that field) and any pattern starting with ***!*** ** will be negated in meaning. 
 
 Examples: 
 
@@ -608,7 +608,7 @@ Human readable location name used in JSON interface.
 
 > ***papalwaysok*** 
 
-(now depreciated; always on) Was used to allow PAP authentication. 
+(now deprecated; always on) Was used to allow PAP authentication. 
 
 SSL OPTIONS
 -----------------------------------------
@@ -647,7 +647,7 @@ FILES
 -----------------------------------------
 
 */usr/local/etc/chilli.conf* 
->The main ***chilli*** configuration file. Per default, this file includes three other files; ***main.conf, hs.conf,*** and ***local.conf.*** The main.conf and hs.conf are created by the shell script routines in ***functions*** based on configurations in the files mentioned below and possibility taking some configurations from a remote RADIUS server or URL. The local.conf file is reserved for location specific configurations. 
+>The main ***chilli*** configuration file. Per default, this file includes three other files; ***main.conf, hs.conf,*** and ***local.conf.*** The `main.conf` and `hs.conf` are created by the shell script routines in ***functions*** based on configurations in the files mentioned below and possibility taking some configurations from a remote RADIUS server or URL. The `local.conf` file is reserved for location specific configurations. 
 
 */usr/local/etc/chilli/defaults* 
 >Default configurations used by the ***chilli*** init.d and ***functions*** scripts in creating the actual configuration files. See the comments in this file for more information on how to configure ***chilli*** and related scripts and embedded content. 
@@ -659,7 +659,7 @@ FILES
 >Helps configure ***chilli*** by loading the above configurations, sets some defaults, and provides functions for writing ***main.conf, hs.conf,*** and ***local.conf*** based on local and possibily centralized settings. 
 
 */usr/local/etc/init.d/chilli* 
->The init.d file for ***chilli*** which defaults to using the above configurations to build a set of configurations files in the /usr/local/etc/chilli directory - taking local configurations and optionally centralized configurations from RADIUS or a URL. 
+>The init.d file for ***chilli*** which defaults to using the above configurations to build a set of configurations files in the `/usr/local/etc/chilli` directory - taking local configurations and optionally centralized configurations from RADIUS or a URL. 
 
 
 SEE ALSO
@@ -670,12 +670,12 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
 
 AUTHORS
 -----------------------------------------
 
-David Bird  
+David Bird
 
 Copyright (C) 2002-2005 by Mondru AB., 2006-2012 David Bird (Coova Technologies) All rights reserved. 
 

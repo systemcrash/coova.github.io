@@ -241,12 +241,12 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. 
 
 AUTHORS
 -----------------------------------------
 
-David Bird  
+David Bird
 
 Copyright (C) 2006-2011 Coova Techcnologies, LLC, 
 

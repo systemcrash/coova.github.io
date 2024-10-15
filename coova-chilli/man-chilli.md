@@ -119,16 +119,16 @@ SEE ALSO
 NOTES
 -----------------------------------------
 
-See *http://www.coova.org/* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
+See *[www.coova.org](http://www.coova.org/)* for further documentation and community support. The original ChilliSpot project homepage is/was at www.chillispot.org. 
 
 Besides the long options documented in this man page ***chilli*** also accepts a number of short options with the same functionality. Use ***chilli --help*** for a full list of all the available options. 
 
-The ***TUN/TAP driver is required*** for proper operation of the ***chilli*** server. Linux kernels later than 2.4.7 already include the driver, but typically needs to be loaded manually with ***modprobe tun*** or automaticly by adding ***alias char-major-10-200 tun*** to the ***/etc/modules.conf*** configuration file. For other platforms see *http://vtun.sourceforge.net/tun/* for information on how to install and configure the TUN/TAP driver. 
+The ***TUN/TAP driver is required*** for proper operation of the ***chilli*** server. Linux kernels later than 2.4.7 already include the driver, but it typically needs to be loaded manually with ***modprobe tun*** or automatically by adding ***alias char-major-10-200 tun*** to the ***/etc/modules.conf*** configuration file. For other platforms see *[http://vtun.sourceforge.net/tun/](http://vtun.sourceforge.net/tun/)* for information on how to install and configure the TUN/TAP driver. 
 
 AUTHORS
 -----------------------------------------
 
-David Bird  
+David Bird
 
 Copyright (C) 2002-2005 by Mondru AB., 2006-2012 David Bird (Coova Technologies) All rights reserved. 
 
